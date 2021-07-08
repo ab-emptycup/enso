@@ -9,7 +9,8 @@ cli = Typer()
 @cli.command()
 def git(username: str, email: str):
     secho(f"Setting {username} & {email} in config...")
-    run('git config --global user.name "John Doe"')
+    run(f'git config --global user.name "{username}"')
+    run(f'git config --global user.email "{email}"')
 
 
 @cli.command()
